@@ -174,7 +174,10 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 	}
 
-
+.certificate-pdf {
+	max-width: 100%;
+	/* height:fit-content; */
+}
 
 .image.main video {
 	width: 100%;
