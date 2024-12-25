@@ -188,6 +188,7 @@ input, select, textarea {
 
 .image.main {
 	display: block;
+	
 	width: 100%; 
 	height: 283px; 
 	overflow: hidden; 
