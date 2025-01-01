@@ -427,6 +427,10 @@
 										const userAnswer = parseInt(document.getElementById('captcha-input').value, 10);
 										if (userAnswer !== captchaAnswer) {
 											alert('Incorrect answer. Please try again.');
+
+											document.getElementById('captcha-input').value = "";
+
+											generateCaptcha();
 											return false;
 										}
 
