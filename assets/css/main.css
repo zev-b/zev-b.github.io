@@ -207,6 +207,15 @@ input, select, textarea {
 	font-size: 18px;
 	margin-bottom: 18px;
 }
+
+#email {
+	display: none;
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 18px;
+}
+
 .captcha {
 	margin-top: 10px;
 	font-size: 16px;

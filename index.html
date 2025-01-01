@@ -393,7 +393,7 @@
 
 								<form id="captcha-form" onsubmit="return verifyCaptcha(event)">
 									<div class="captcha-container" id="captcha-container">
-										<p>Solve the math problem to reveal my phone number:</p>
+										<p>Solve the math problem to reveal my phone number and email:</p>
 										<label for="captcha-input">
 											What is <span id="captcha-question"></span>?
 										</label>
@@ -403,6 +403,12 @@
 								</form>
 								<span id="phone-number">+1 (571) 435-2273</span>
 
+								<h3 id="email" style="padding-bottom: 17px;">
+									Email: 
+									<a href="mailto:contact@zevb.dev?subject=Inquiry&body=Hello Zev," >
+										contact@zevb.dev
+									</a>
+								</h3>
 								<script>
 									let captchaAnswer;
 
@@ -426,6 +432,7 @@
 
 										// CAPTCHA passed: reveal the phone number and hide the CAPTCHA prompt
 										document.getElementById('phone-number').style.display = 'block';
+										document.getElementById('email').style.display = 'block';
             							document.getElementById('captcha-container').style.display = 'none'; // Hide the CAPTCHA prompt
 										document.getElementById('captcha-form').style.display = 'none'; // Hide the submit button too
 									}
@@ -458,11 +465,6 @@
 									}
 								</script> -->
 
-								<h3 style="padding-bottom: 17px;">Email: 
-									<a href="mailto:contact@zevb.dev?subject=Inquiry&body=Hello Zev," >contact@zevb.dev
-
-									</a>
-								</h3>
 <!-- 
 								<script>
 									function showAlert() {
