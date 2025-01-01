@@ -391,9 +391,9 @@
 									</ul>
 								</form> -->
 
-								<p>Solve the math problem to reveal my phone number:</p>
 								<form id="captcha-form" onsubmit="return verifyCaptcha(event)">
-									<div class="captcha">
+									<div class="captcha-container" id="captcha-container">
+										<p>Solve the math problem to reveal my phone number:</p>
 										<label for="captcha-input">
 											What is <span id="captcha-question"></span>?
 										</label>
@@ -424,9 +424,10 @@
 											return false;
 										}
 
-										// CAPTCHA passed, reveal the phone number
+										// CAPTCHA passed: reveal the phone number and hide the CAPTCHA prompt
 										document.getElementById('phone-number').style.display = 'block';
-										document.getElementById('captcha-form').style.display = 'none';
+            							document.getElementById('captcha-container').style.display = 'none'; // Hide the CAPTCHA prompt
+										document.getElementById('captcha-form').style.display = 'none'; // Hide the submit button too
 									}
 
 									// Initialize CAPTCHA on page load
