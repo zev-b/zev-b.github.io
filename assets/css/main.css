@@ -199,8 +199,17 @@ input, select, textarea {
 	/* color: #007BFF; */
 	text-decoration: none;
   }
-  
 
+  #phone-number {
+	display: none;
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 18px;
+}
+.captcha {
+	margin-top: 10px;
+	font-size: 16px;
+}
   
 
 .image.main video {

@@ -390,6 +390,73 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form> -->
+
+								<p>Solve the math problem to reveal my phone number:</p>
+								<form id="captcha-form" onsubmit="return verifyCaptcha(event)">
+									<div class="captcha">
+										<label for="captcha-input">
+											What is <span id="captcha-question"></span>?
+										</label>
+										<input type="text" id="captcha-input" required />
+									</div>
+									<button type="submit">Submit</button>
+								</form>
+								<span id="phone-number">+1 (571) 435-2273</span>
+
+								<script>
+									let captchaAnswer;
+
+									// Generate a simple math question
+									function generateCaptcha() {
+										const num1 = Math.floor(Math.random() * 10) + 1;
+										const num2 = Math.floor(Math.random() * 10) + 1;
+										captchaAnswer = num1 + num2;
+
+										document.getElementById('captcha-question').textContent = `${num1} + ${num2}`;
+									}
+
+									function verifyCaptcha(event) {
+										event.preventDefault();
+
+										const userAnswer = parseInt(document.getElementById('captcha-input').value, 10);
+										if (userAnswer !== captchaAnswer) {
+											alert('Incorrect answer. Please try again.');
+											return false;
+										}
+
+										// CAPTCHA passed, reveal the phone number
+										document.getElementById('phone-number').style.display = 'block';
+										document.getElementById('captcha-form').style.display = 'none';
+									}
+
+									// Initialize CAPTCHA on page load
+									generateCaptcha();
+								</script>
+
+								<!-- <p>
+									Click the button below to reveal my phone number:
+								</p>
+								<button 
+									class="reveal-button" 
+									onclick="revealNumber()" 
+									aria-controls="phone-number" 
+									aria-expanded="false">
+									Show Phone Number
+								</button>
+								<span id="phone-number" role="region">+1 (234) 567-890</span>
+
+								<script>
+									function revealNumber() {
+										const phoneNumber = document.getElementById('phone-number');
+										const button = event.target;
+										phoneNumber.style.display = 'inline'; // Make visible
+										phoneNumber.style.opacity = '1'; // Fade-in effect
+										button.setAttribute('aria-expanded', 'true'); // Update ARIA state
+										button.disabled = true; // Disable button after revealing
+										button.textContent = 'Phone Number Revealed';
+									}
+								</script> -->
+
 								<h3 style="padding-bottom: 17px;">Email: 
 									<a href="mailto:contact@zevb.dev?subject=Inquiry&body=Hello Zev," >contact@zevb.dev
 
