@@ -260,7 +260,7 @@ input, select, textarea {
 
 @media (max-width: 768px) {
     .image.main {
-        height: auto; /* Adjust for smaller screens */
+        height: auto;
     }
 
     .image.main video {
